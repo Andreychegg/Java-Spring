@@ -58,11 +58,11 @@ public class BookShelfController {
 
     @PostMapping("/removeByRegex")
     public String removeByRegex(@RequestParam(value = "queryRegex") String queryRegex) {
-        if (queryRegex != null && !queryRegex.isEmpty()) {
+        if (!queryRegex.isEmpty()) {
             int removedCount = bookService.removeBooksByRegex(queryRegex);
             logger.info("Removed " + removedCount + " books");
         } else {
-            logger.warn("Invalid or empty regex provided for removal");
+            logger.warn("Invalid or empty regex");
         }
         return "redirect:/books/shelf";
     }

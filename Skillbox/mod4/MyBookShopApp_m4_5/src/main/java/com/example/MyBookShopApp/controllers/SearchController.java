@@ -13,8 +13,4 @@ public class SearchController {
     public String searchPage(@PathVariable(required = true) String query){
         return "search/index";
     }
-//    @GetMapping
-//    public String searchPage(@RequestParam(required = true) String query){
-//        return "search/index";
-//    }
 }
